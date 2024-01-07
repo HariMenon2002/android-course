@@ -1,0 +1,51 @@
+//Single Child layout widget
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.pink,
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+          title: Text('i am rich'), //try making changes here and do hot reload
+        ),
+
+        // body: Container(
+        //   height:100,
+        //   width:100,
+        //   color:Colors.blue,
+        // ) ,
+
+        body: Center(
+          child: Container(
+            height: 200,
+            width: 200,
+            color: Colors.blue,
+            // child:Center(
+            //     child:Text('Container'),
+            // ),
+            child: Text('Container'), //if you click hard next to Text, a bulb icon appears and in that you can wrap with widget(eg wrap with center widget like as above) ,remove widget etc.
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Single Child layout widget
+2.Center widget,container is able to accept only one child
+3.Container is just like a box and by default its height and width is 0
+
+4.3 most Multi child layout widgets are rows ,columns and stacks
+
+*/

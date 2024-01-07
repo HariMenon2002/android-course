@@ -1,0 +1,43 @@
+//multilayout children part 1
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title:const Center(child: Text('i am rich')),
+        ),
+        body: Column(
+          children: const [
+            Center(
+              child:Text('center widget')  //if i put center inside children all other children as well will shift towards center
+            ),
+            Text('First widget'),
+            Text('second widget'),
+            Text('First widget'),
+            Text('First widget'),
+            Text('First widget'),
+          ],//children accepts array
+        ),
+
+
+
+      ),
+    );
+  }
+}
+
+/*
+1.google multilayout widgets-they accept multiple children
+*/

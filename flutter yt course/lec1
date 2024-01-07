@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MaterialApp(
+      //home:Text('Hello World') //here home is the child of Material App, Text is the child of home
+      home: Center(
+          child: Text(
+              'Hello World'),
+      ), //here center widget is the child of home and parent of Text
+      ));
+}
+
+/*
+1.MaterialApp has a lot of widgets
+2.widgets are texts ,icons etc.
+3.widget can be closed using ,
+4.You have also put labels wherever widgets have closed.
+ */

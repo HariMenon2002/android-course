@@ -1,0 +1,33 @@
+//Assets
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp( MaterialApp(
+
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey.shade900,
+        appBar: AppBar(
+             backgroundColor: Colors.blueGrey,
+             title:Text('i am poor'),
+        ),
+
+        body:const Center(
+          //child:Text("hello world")
+          child:Image(
+              image:AssetImage('assets/virat kohli 2.jpg'),
+              
+        ),
+      ),//it occupies the entire screen, you will only see white
+      ),
+  ));
+}
+
+/*
+1.Assets are items which are brought from outside, here i am taking two images
+2.Right click on demo_project and choose new and then create directory,here i have put as assets
+3.go to pubspec.yaml and uncomment the assets part(by ctrl+/) and correct the identation.
+4.Then rename the contents as directory name ie. assets/  and click on pub.get, if exit code 0 then it means successful
+5.in main.dart in image write and AssetImage and the directory file
+
+ */

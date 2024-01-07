@@ -1,0 +1,32 @@
+//Scaffold widget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp( MaterialApp(
+
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey.shade900, //shade600 is not constant and thus const cant be used for MaterialApp
+        appBar: AppBar(
+             backgroundColor: Colors.blueGrey,
+             title:Text('i am poor'),
+        ),
+
+        body:const Center(                     //here const should
+          //child:Text("hello world")
+          child:Image(
+              image:NetworkImage(
+                           "https://images.pexels.com/photos/2340978/pexels-photo-2340978.jpeg?cs=srgb&dl=pexels-davide-de-giovanni-2340978.jpg&fm=jpg&_gl=1*b244o8*_ga*MTMwNDAzMTAwMi4xNjgzNDY5NTA1*_ga_8JE65Q40S6*MTY4NjkzOTEwNC4yLjEuMTY4NjkzOTM2MC4wLjAuMA..")
+                     ),
+              
+        ),
+      ),//it occupies the entire screen, you will only see white
+      ));
+}
+
+/*
+1.Scaffold widget implements basic material design visual layout structure
+2.explore color tool in material.io
+3.When you write const with MaterialApp everything under it becomes const , thus if you dont write it, you have to write const for each widget in MaterialApp if it is  constant
+4.Read flutter appbar documentation
+ */

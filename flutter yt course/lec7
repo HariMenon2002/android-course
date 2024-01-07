@@ -1,0 +1,70 @@
+//multilayout children part2 -columns
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title:const Center(child: Text('i am rich')),
+        ),
+        body: SafeArea(  //used to wrap it so that it doesnt go outside
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,  //MainAxisAlignment controls the posiiton in the column,you can have .start and .end as well
+            //mainAxisAlignment:MainAxisAlignment.spaceBetween, //this will put equal space in between the containers not including the top
+            mainAxisAlignment:MainAxisAlignment.end,//ensure equal spaces including top and bottom
+            crossAxisAlignment: CrossAxisAlignment.center, //aligns everything in that particular column to the center but does not go out of column
+
+
+            children: [
+              Text('Hari Menon'),
+              Text('tomorrow'),
+              Container(
+                height:100,
+                width:100,
+                color:Colors.pink,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                  height: 15, //this is to add space btw containers if needed
+              ),
+              Container(
+                height:100,
+                width:100,
+                color:Colors.blue,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                height: 15, //this is to add space if needed
+              ),
+              Container(
+                height:100,
+                width:100,
+                color:Colors.teal,
+                child: const Center(child: Text('container1')),
+              ),
+            ],//children accepts array
+          ),
+        ),
+
+
+
+      ),
+    );
+  }
+}
+
+/*
+1.google multilayout widgets-they accept multiple children
+2.It is always good to add const wherever possible just so that compiler knows
+*/

@@ -1,0 +1,67 @@
+//multilayout children part3-rows
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title:const Center(child: Text('i am rich')),
+        ),
+        body: SafeArea(
+          child: Row(
+
+            mainAxisAlignment:MainAxisAlignment.start,//aligns in the row
+            crossAxisAlignment: CrossAxisAlignment.start,
+
+
+            children: [
+              Container(
+                height:100,
+                width:100,
+                color:Colors.pink,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                  width: 15, //for row width is considered
+              ),
+              Container(
+                height:100,
+                width:100,
+                color:Colors.blue,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                width: 15,
+              ),
+              Container(
+                height:100,
+                width:100,
+                color:Colors.teal,
+                child: const Center(child: Text('container1')),
+              ),
+            ],//children accepts array
+          ),
+        ),
+
+
+
+      ),
+    );
+  }
+}
+
+/*
+1.google multilayout widgets-they accept multiple children
+2.It is always good to add const wherever possible just so that compiler knows
+*/

@@ -1,0 +1,88 @@
+//fonts
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title: const Center(
+            child: Text(
+              'i am rich',
+              style: TextStyle(
+                  fontSize: 50,
+                  fontFamily: 'Pacifico',
+                  fontWeight: FontWeight.w700,
+                  color: Colors.redAccent,
+                  decoration: TextDecoration.underline, //you can also do overline, throughline etc
+              ),
+            ),
+          ),
+        ),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start, //aligns in the row
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment:MainAxisAlignment.center,//aligns in the row
+            // crossAxisAlignment: CrossAxisAlignment.center,
+
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("hari menon"),
+                  Icon(Icons.ac_unit),
+                  Text("hari m")
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.pink,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                height: 15, //for row width is considered
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.blue,
+                child: const Center(child: Text('container1')),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.teal,
+                child: const Center(child: Text('container3')),
+              ),
+            ], //children accepts array
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Go to google fonts and download the family
+2.create a fonts directory in android studio and add that ttf file you downloaded into this fonts file
+3.Go to pubsec.yaml and go to fonts section, uncomment and make changes including adding family name and path
+4.Do pub.get and rerun the file
+5.In main.dart, to make changes in text , do the above like in appBar
+*/

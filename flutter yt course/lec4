@@ -1,0 +1,45 @@
+//stateless widget
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp( MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+
+      home: Scaffold(
+        backgroundColor: Colors.pink,
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+          title:Text('i am rich'),  //try making changes here and do hot reload
+        ),
+
+        body:const Center(
+          //child:Text("hello world")
+          child:Image(
+            image:AssetImage('assets/virat kohli 2.jpg'),
+
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+/*
+1.Type st and click on stless to get stateless widget.Put the class name as eg. MyApp (widget)
+2.return container()- displays a black page
+3.put runApp(MyApp()) and in Myapp return the MaterialApp widget of prev program.You will get same output as prev program
+4.Hot reload(thunder icon near run)- suppose i don't want to run my program from main and increase my productivity.thus you can make changes below the widget build fn and click on the hot reload icon
+5.Hot reload just rebuilds the MyApp widget from the Widget build statement
+6.Hot reload widget ie Widget build() is always inside @override
+7.Hot restart helps in building project from main itself.Make changes and press ctrl+s
+*/
+
