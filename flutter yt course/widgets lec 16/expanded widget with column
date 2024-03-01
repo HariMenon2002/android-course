@@ -1,0 +1,80 @@
+//expanded widget
+import 'package:flutter/material.dart';
+import 'dart:math'; // for math functionalities
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title:Text("Lottery App"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+           children: [
+             Expanded(
+                 flex:1,
+                 child: Container(
+                    color:Colors.red,
+                    height:250,
+                    child:Center(child:Text('container')),
+        ),
+             ),
+            Expanded(
+              flex:3,
+              child: Center(
+                 child: Container(
+
+
+                   decoration: BoxDecoration(
+                     color:Colors.orange,
+
+                     borderRadius: BorderRadius.circular(10),
+                     border: Border.all(
+                        color:Colors.red,
+                        width:1
+                     ),
+                     image:DecorationImage(
+                       fit:BoxFit.fill, // to fit the image
+                       //fit:BoxFit.cover
+                       image: NetworkImage('https://cdn.britannica.com/48/252748-050-C514EFDB/Virat-Kohli-India-celebrates-50th-century-Cricket-November-15-2023.jpg'),
+
+                     ),
+
+                     boxShadow:[            //boxShadow accepts an array
+                       BoxShadow(
+                         color:Colors.red,
+                         blurRadius:10,  //shadow size increases with this
+                       ),
+                     ],
+
+
+
+
+
+                   ),
+                   child:Center(child: Text('Login 1')),
+                   //color:Colors.orange,          //either you put color outside or inside decoration
+                 ),
+               ),
+            ),
+           ],
+              ),
+      ),
+    );
+  }
+}
+
+/*
+
+
+ */
+

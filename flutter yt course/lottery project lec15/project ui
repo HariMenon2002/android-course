@@ -1,0 +1,80 @@
+//lottery app
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  int x=4;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Lottery app"),
+        ),
+        body: SafeArea(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+
+              children: [
+                    Center(child: Text('Lottery winning no is $x')), //to display variable
+                    //Text(x.toString())
+                    SizedBox(height:20,),  //for space
+                    Container(
+                      height:250,
+                      decoration:BoxDecoration(
+                        color:Colors.grey.withOpacity(.2),
+                        borderRadius: BorderRadius.circular(10)
+                                 ),
+                        child:Padding(
+                             padding:const EdgeInsets.all(15.0),
+                             child:Column(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               crossAxisAlignment: CrossAxisAlignment.center,
+                               children: [
+                                 Icon(Icons.error,color:Colors.red,size:35,),
+                                 SizedBox(height:15,),
+                                 Text("better luck next time your number is $x\ntry again",textAlign: TextAlign.center,),
+                               ],
+                             ),
+                        ),
+
+
+                    //Text(x>5 ?'x is greater than 5':x.toString()),
+                      ),
+              ],
+        ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+           print("tap");
+          },
+          //child: Icon(Icons.refresh),
+          child:Icon(x>5?Icons.place:Icons.refresh),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.You can have ternary operator in any widget
+
+ */
+
+
+
+

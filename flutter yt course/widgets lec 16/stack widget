@@ -1,0 +1,82 @@
+//stack widget
+import 'package:flutter/material.dart';
+import 'dart:math'; // for math functionalities
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title:Text("Lottery App"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+                SizedBox(
+                  child:Stack(
+                    alignment:Alignment.center,
+                    children: [
+                      Text("hi mom"), //does not become visible as container will be on top of it
+                      Container(
+                        height:100,
+                        width:100,
+                        color:Colors.red,
+
+                      ),
+                      Container(
+                        height:80,
+                        width:80,
+                        color:Colors.yellow,
+
+                      ),
+
+                      //you can also do alignment via
+                      Positioned(
+                           bottom:0,  //0px shift from bottom
+                           child:Text("Asif Taj111")
+                      ),
+                      Text("Asif taj"),
+                    ],
+                  ),
+                ),
+
+                Stack(
+                  children: [
+                    Container(
+                      height:100,
+                      width:100,
+                      color:Colors.green,
+
+                    ),
+                    Container(
+                      height:90,
+                      width:90,
+                      color:Colors.blue,
+
+                    ),
+                  ],
+                ),
+
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Stacking places one on top of another
+2.change width(or height) so that a portion of each becomes visible
+
+ */
+

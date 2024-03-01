@@ -1,0 +1,80 @@
+//listile widget
+import 'package:flutter/material.dart';
+import 'dart:math'; // for math functionalities
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title:Text("Lottery App"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:  [
+
+              // ListTile(
+              //     leading:CircleAvatar(
+              //         //radius:100,
+              //         backgroundColor: Colors.black,
+              //
+              //     ),
+              //
+              //
+              //     title: Text("Asif Taj Tech"),
+              //     subtitle: Text("subscribe please"),
+              //     trailing:Text("it is 3:15 pm"),
+              // ),
+
+
+              // Expanded(
+              //   flex:3,
+              //   child: ListView.builder(             //used to make list like scrolling through chats
+              //     itemCount:1000,
+              //     itemBuilder: (context,index){          //starts from 0
+              //       return Text("item"+index.toString());
+              //     },
+              //   ),
+              // ),
+
+            Expanded(
+              child: ListView.builder(             //making a chat list
+                itemCount:100,
+                itemBuilder: (context,index){          //starts from 0
+                  return ListTile(
+                    leading:CircleAvatar(
+                      //radius:100,
+                      backgroundColor: Colors.black,
+
+                    ),
+
+
+                    title: Text("Asif Taj Tech"),
+                    subtitle: Text("subscribe please"),
+                    trailing:Text("it is 3:15 pm"),
+                  );
+                },
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Different text styles can be combined using richtext
+
+ */
+

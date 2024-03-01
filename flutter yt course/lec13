@@ -1,0 +1,61 @@
+// app with stateless widget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  print("main");
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+     MyApp({Key? key}) : super(key: key);   //i have to remove const here as value of x changes
+
+  //final int x=0;
+   int x=12;  //if i initialize variable here, even if i change it after sometime, changes will not be reflected if i hot reload as hot reload execution begins from widget
+   //to avoid this you can put this inside the widget fn
+
+
+  @override
+  Widget build(BuildContext context) {
+    //int x=14;
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title:Text("My first app"),
+        ),
+        body:SafeArea(
+            child: Center(child: Text(x.toString(),style:TextStyle(fontSize: 50),)),
+        ),
+        floatingActionButton: FloatingActionButton( //for the blue button
+          onPressed:() {
+                x++;
+                //print('tap');
+                print(x.toString());  //to print in console
+          },
+          child: Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Scaffold has floating action which accepts a widget
+2.Biggest disadv of stateless widget is that for eg. here ,even if i tap on the button my number increases in terminal but it is not displayed on the screen
+  unless I hot reload. This is why stateful is used
+3. Stateless widgets dont rebuild unlike stateful
+
+ */
+
+//dart lecture
+/*
+1.Go to dartpad.dev
+eg.
+void main(){
+    int num1=2;
+    int num2=5;
+    print(num1+num2);
+
+}
+ */
+

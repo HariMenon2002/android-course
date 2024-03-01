@@ -1,0 +1,81 @@
+//richtext widget and text form field widget
+import 'package:flutter/material.dart';
+import 'dart:math'; // for math functionalities
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title:Text("Lottery App"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:  [
+
+              RichText(
+                 text:TextSpan(
+                   text:"Hello",
+                   style:Theme.of(context).textTheme.bodyText1,
+                   children: [
+                     TextSpan(text: 'bold',style: TextStyle(decoration:TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 24)),
+                     TextSpan(text: 'world',style: TextStyle(fontWeight: FontWeight.normal,fontSize: 24)),
+                   ],
+
+                 ),
+
+             //
+               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  //keyboardType: TextInputType.phone,
+                  cursorColor: Colors.green,
+                  //enabled:false,    this makes sure user is not able to enter anything
+                  style:TextStyle(fontSize: 14,color:Colors.green), //this is for what you actually type
+                  decoration: InputDecoration(
+                      filled:true, //these 2 lines make entire box filled with green color
+                      prefixIcon: Icon(Icons.alternate_email),
+                      icon:Icon(Icons.add),
+                      fillColor: Colors.green.withOpacity(0.4),
+                      hintText:'Email',      //this is what is displayed before going to type
+                      labelText: 'Email1' , //this will be always there
+                      hintStyle:TextStyle(fontSize: 14,color:Colors.red),
+
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color:Colors.red,width:1),
+                          borderRadius: BorderRadius.circular(10),
+                      ),
+                      focusedBorder:OutlineInputBorder(),  //border when i click on it, same properties as above can be used
+
+                  ),
+
+                  onChanged: (value){   //it is a function which records what i type in the field
+                      print(value);
+                  },
+
+                ),
+              ),
+
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+1.Different text styles can be combined using richtext
+
+ */
+
